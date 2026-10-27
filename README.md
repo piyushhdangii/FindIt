@@ -6,7 +6,7 @@ FindIt is a community lost-and-found app. People can post lost or found items, d
 
 Add a link to a walkthrough here when it is ready:
 
-**[▶ Watch the FindIt demo](YOUR_DEMO_VIDEO_URL)**
+**[▶ Watch the FindIt demo](https://drive.google.com/file/d/1Tp0DwoE7V6SC2n7TUS2E311qXM4qwjW6/view?usp=sharing)**
 
 Replace `YOUR_DEMO_VIDEO_URL` with a YouTube, Google Drive, or GitHub video link. For GitHub, upload the video to an issue or pull request comment and use the generated attachment URL.
 
