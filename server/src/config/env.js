@@ -52,7 +52,7 @@ export function cookieOptions() {
   return {
     httpOnly: true,
     secure: config.nodeEnv === 'production',
-    sameSite: 'lax',
+    sameSite: config.nodeEnv === 'production' ? 'none' : 'lax',
     maxAge: durationMilliseconds(config.jwtExpiresIn),
     path: '/',
   }

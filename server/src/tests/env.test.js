@@ -21,6 +21,18 @@ beforeEach(() => {
 afterEach(() => vi.unstubAllEnvs())
 
 describe('environment validation', () => {
+  it('uses cross-site secure cookies in production and lax cookies locally', async () => {
+    vi.stubEnv('NODE_ENV', 'development')
+    vi.resetModules()
+    let envConfig = await import('../config/env.js')
+    expect(envConfig.cookieOptions()).toMatchObject({ sameSite: 'lax', secure: false })
+
+    vi.stubEnv('NODE_ENV', 'production')
+    vi.resetModules()
+    envConfig = await import('../config/env.js')
+    expect(envConfig.cookieOptions()).toMatchObject({ sameSite: 'none', secure: true })
+  })
+
   it('accepts the documented configuration', () => {
     expect(() => validateEnvironment()).not.toThrow()
   })
